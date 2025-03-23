@@ -21,5 +21,4 @@ class DyT(nnx.Module):
 
     def __call__(self, x):
         x = jnp.tanh(self.alpha * x)
-        x = x * self.weight + self.bias
-        return x
+        return x * self.weight + self.bias
