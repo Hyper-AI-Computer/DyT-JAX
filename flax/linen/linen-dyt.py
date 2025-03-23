@@ -7,8 +7,8 @@ class DyT(nn.Module):
     @nn.compact
     def __call__(self, x):
         alpha = self.param('alpha', lambda _: jnp.ones((1)) * self.alpha_init_value)
-        weight = self.param('weight', nn.initializers.ones, x.shape)
-        bias = self.param('bias', nn.initializers.zeros, x.shape)
+        weight = self.param('weight', nn.initializers.ones, (x.shape[-1],))
+        bias = self.param('bias', nn.initializers.zeros, (x.shape[-1],))
 
         x = jnp.tanh(alpha * x)
         return x * weight + bias
