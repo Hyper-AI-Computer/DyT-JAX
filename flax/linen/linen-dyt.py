@@ -2,8 +2,8 @@ import flax.linen as nn
 from jax import numpy as jnp
 
 class DyT(nn.Module):
-    # https://github.com/Hyper-AI-Computer/DyT-JAX
     alpha_init_value: float = 0.5
+    # https://github.com/Hyper-AI-Computer/DyT-JAX
 
     @nn.compact
     def __call__(self, x):
