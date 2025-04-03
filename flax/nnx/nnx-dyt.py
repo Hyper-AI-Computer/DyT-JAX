@@ -5,6 +5,8 @@ from jax import numpy as jnp
 from flax.typing import Dtype, Initializer
 
 class DyT(nnx.Module):
+    # https://github.com/Hyper-AI-Computer/DyT-JAX
+    
     def __init__(
             self,
             num_features,
